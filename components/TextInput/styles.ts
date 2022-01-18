@@ -5,8 +5,6 @@ export const Label = styled.label`
     color: ${theme.colors.white};
     font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.light};
-    width: 32rem;
-    height: 5rem;
   `}
 `;
 
@@ -17,8 +15,8 @@ export const Input = styled.input`
     font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.normal};
     font-family: ${theme.font.family};
-    width: 100%;
-    height: 100%;
+    width: 32rem;
+    height: 5rem;
     border-radius: 1rem;
     border: none;
     text-align: center;
