@@ -27,8 +27,17 @@ export const Home: React.FC = () => {
         onChange={(value) => setUsername(value)}
       />
       <ButtonsContainer>
-        <Button text='Enter a room' onClick={handleEnterRoom} isOutlined />
-        <Button text='Start new game' onClick={handleStartNewGame} />
+        <Button 
+          text='Enter a room' 
+          onClick={handleEnterRoom} 
+          isOutlined
+          isDisable = {!username.length}
+        />
+        <Button 
+          text='Start new game' 
+          onClick={handleStartNewGame}
+          isDisable = {!username.length}
+        />
       </ButtonsContainer>
     </Layout>
   );
