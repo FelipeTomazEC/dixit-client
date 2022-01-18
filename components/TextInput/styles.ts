@@ -21,7 +21,7 @@ export const Input = styled.input`
     border: none;
     text-align: center;
     margin-top: 0.5rem;
-
+    display: block;
     :focus {
       outline: none;
     }
