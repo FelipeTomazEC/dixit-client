@@ -3,7 +3,7 @@ import 'styled-components';
 declare module 'styled-components' {
   export interface DefaultTheme {
     border: {
-      radius: '0.8rem';
+      radius: '1rem';
     };
     screen: {
       container: '130rem';

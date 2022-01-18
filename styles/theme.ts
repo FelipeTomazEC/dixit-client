@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components';
 
 export const theme  = {
   border: {
-    radius: '0.8rem',
+    radius: '1rem',
   },
   screen: {
     container: '130rem',
