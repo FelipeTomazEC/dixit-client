@@ -15,7 +15,11 @@ export const EnterRoom: React.FC = () => {
           label='Enter room code'
           onChange={(value) => setRoomCode(value)}
         />
-        <Button text='Enter' onClick={handleEnterClick} />
+        <Button 
+          text='Enter' 
+          onClick={handleEnterClick} 
+          isDisable={!roomCode.length}
+        />
       </Container>
     </Layout>
   );
