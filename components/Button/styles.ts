@@ -15,5 +15,10 @@ export const Container = styled.button<Props>`
     border: none;
     height: 6rem;
     width: 32rem;
+
+    :disabled {
+      color: ${theme.colors.lightGray};
+      background-color: ${theme.colors.darkGray};
+    }
   `}
 `;
