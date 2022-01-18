@@ -17,7 +17,7 @@ export const Input = styled.input`
     font-family: ${theme.font.family};
     width: 32rem;
     height: 5rem;
-    border-radius: 1rem;
+    border-radius: ${theme.border.radius};
     border: none;
     text-align: center;
     margin-top: 0.5rem;
