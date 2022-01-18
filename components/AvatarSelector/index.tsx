@@ -8,7 +8,7 @@ interface Props {
   onSelect: (newAvatar: string) => void;
 }
 
-const AvatarSelector: React.FC<Props> = (props) => {
+export const AvatarSelector: React.FC<Props> = (props) => {
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleOnClick = () => {
@@ -43,5 +43,3 @@ const AvatarSelector: React.FC<Props> = (props) => {
     </Container>
   )
 }
-
-export default AvatarSelector;
