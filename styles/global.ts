@@ -20,7 +20,7 @@ export const GlobalStyle = createGlobalStyle`
 
   ${({theme}) => css`
     body {
-      font-family: ${theme.font.family}
+      font-family: ${theme.font.family};
       height: 100vh;
       background-color: ${theme.colors.black};
     }
