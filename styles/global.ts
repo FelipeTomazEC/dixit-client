@@ -15,13 +15,20 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
-    font-size: 62.5%
+    font-size: 62.5%;
+  }
+
+  html,
+  body,
+  body > div:first-child,
+  div#__next,
+  div#__next > div {
+    height: 100%;
   }
 
   ${({theme}) => css`
     body {
       font-family: ${theme.font.family};
-      height: 100vh;
       background-color: ${theme.colors.black};
     }
   `}
