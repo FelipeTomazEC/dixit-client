@@ -8,7 +8,7 @@ export const Heading = styled.h2`
     position: relative;
     line-height: ${theme.spacings.large};
     width: calc(32rem - (${theme.font.sizes.small} + ${theme.spacings.xsmall}));
-    margin-bottom: ${theme.spacings.small};
+    margin-bottom: ${theme.spacings.xsmall};
     font-weight: ${theme.font.normal};
 
     ::before {
@@ -25,4 +25,5 @@ export const Heading = styled.h2`
 
 export const ContainerCTA = styled.div`
   margin-top: auto;
+  padding-top: ${({theme}) => theme.spacings.xxsmall};
 `;
