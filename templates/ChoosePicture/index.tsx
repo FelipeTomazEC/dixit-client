@@ -1,10 +1,15 @@
+import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { LayoutWithHeadingAndCTA } from '../../components/LayoutWithHeadingCTA';
 import { PictureSelector } from '../../components/PictureSelector';
 
 export const ChoosePicture: React.FC = () => {
+  const router = useRouter();
   const [selectedPicture, setSelectedPicture] = useState<string>();
-  const handleSendPicture = () => alert(`Sending picture ${selectedPicture} to the other players...`);
+  const handleSendPicture = () => {
+    alert(`Sending picture ${selectedPicture} to the other players...`);
+    router.push('/enter-sentence');
+  }
 
   const pictures = [
     'https://i.pinimg.com/564x/d7/8e/42/d78e42c74b5463a164d6f8888c5464b6.jpg',

@@ -1,10 +1,11 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import { LayoutWithHeadingAndCTA } from '../../components/LayoutWithHeadingCTA';
 import { PlayerScoreCard } from '../../components/PlayerScoreCard';
 import { List } from './styles';
 
 export const Scores: React.FC = () => {
-  const handleNextRound = () => alert('Starting new round...');
+  const router = useRouter();
   const getFakeAvatar = () => `https://i.pravatar.cc/50?img=${Math.random()}a`;
   const players = [
     {avatar: getFakeAvatar(), username: 'User1235', score: 17},
@@ -13,6 +14,11 @@ export const Scores: React.FC = () => {
     {avatar: getFakeAvatar(), username: 'TheOne', score: 11},
     {avatar: getFakeAvatar(), username: 'Aaron554', score: 11},
   ];
+
+  const handleNextRound = () => {
+    alert('Starting new round...');
+    router.push('/final-scores');
+  }
 
   return (
     <LayoutWithHeadingAndCTA 

@@ -1,10 +1,11 @@
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import React, { ChangeEvent, useState } from 'react';
 import { LayoutWithHeadingAndCTA } from '../../components/LayoutWithHeadingCTA';
 import { Container, Instruction, SentenceInput } from './styles';
 
 export const EnterSentence: React.FC = () => {
-  const handleSubmit = () => alert(`Submitting you image and sentence to the other players...`);
+  const router = useRouter();
   const selectedImage = 'https://i.pinimg.com/564x/d7/8e/42/d78e42c74b5463a164d6f8888c5464b6.jpg';
   const [sentence, setSentence] = useState<string>('');
   const handleOnChangeSentence = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -12,6 +13,10 @@ export const EnterSentence: React.FC = () => {
     if(value.length <= 100) {
       setSentence(value);
     }
+  }
+  const handleSubmit = () => {
+    alert(`Submitting you image and sentence to the other players...`);
+    router.push('/vote');
   }
 
   return (

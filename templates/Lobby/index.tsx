@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import { Button } from '../../components/Button';
 import { Layout } from '../../components/Layout';
@@ -5,6 +6,7 @@ import { PlayerLobbyCard } from '../../components/PlayerLobbyCard';
 import { ButtonsContainer, PlayerList, WaitingMessage } from './styles';
 
 export const Lobby: React.FC = () => {
+  const router = useRouter();
   const getFakeAvatar = () => `https://i.pravatar.cc/50?img=${Math.random()}a`;
   const players = [
     {avatar: getFakeAvatar(), username: 'User1235'},
@@ -13,7 +15,10 @@ export const Lobby: React.FC = () => {
     {avatar: getFakeAvatar(), username: 'TheOne'},
   ];
   const handleShareInviteLink = () => alert(`Generating link for this room...`);
-  const handleStartGame = () => alert('Starting the match...');
+  const handleStartGame = () => {
+    alert('Starting the match...');
+    router.push('/choose-picture');
+  };
 
   return (
     <Layout>
