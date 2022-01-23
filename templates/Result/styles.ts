@@ -15,7 +15,8 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: ${theme.spacings.small};
-
+    width: 32rem;
+    
     img {
       border-radius: ${theme.border.radius};
     }

@@ -9,5 +9,6 @@ export const HintSentence = styled.p`
     border-radius: ${theme.border.radius};
     font-weight: ${theme.font.bold};
     margin-bottom: ${theme.spacings.xsmall};
+    width: 32rem;
   `}
 `;

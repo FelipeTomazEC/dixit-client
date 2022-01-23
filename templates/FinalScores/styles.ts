@@ -5,6 +5,7 @@ export const Container = styled.div`
   flex-direction: column;
   gap: ${({theme}) => theme.spacings.large};
   margin-top: ${({theme}) => theme.spacings.large};
+  width: 32rem;
 `;
 
 export const Text = styled.h1`
