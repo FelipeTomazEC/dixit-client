@@ -2,6 +2,7 @@ import { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from '../styles/global'
 import Head from 'next/head';
 import { theme } from '../styles/theme'
+import { MatchProvider } from '../providers/match-context';
 
 
 export default function App({ Component, pageProps }) {
@@ -14,7 +15,9 @@ export default function App({ Component, pageProps }) {
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Component {...pageProps} />
+        <MatchProvider>
+          <Component {...pageProps} />
+        </MatchProvider>
       </ThemeProvider>
     </>
   )
