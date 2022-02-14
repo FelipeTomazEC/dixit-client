@@ -1,5 +1,9 @@
 module.exports = {
   images: {
-    domains: ['images.vexels.com', 'i.pravatar.cc', 'i.pinimg.com']
+    domains: process.env.IMAGE_SERVERS.split(',')
+  },
+  env: {
+    WS_URL: process.env.WS_URL,
+    API_URL: process.env.API_URL
   }
 }
