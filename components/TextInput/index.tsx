@@ -4,6 +4,7 @@ import { Input, Label } from './styles';
 interface Props {
   label: string;
   onChange: (value: string) => void;
+  value: string
 }
 
 export const TextInput: React.FC<Props> = (props) => {
@@ -12,6 +13,7 @@ export const TextInput: React.FC<Props> = (props) => {
         <Input 
           onChange={(e) => props.onChange(e.target.value)} 
           spellCheck={false}
+          value={props.value}
         />
       </Label>
   );

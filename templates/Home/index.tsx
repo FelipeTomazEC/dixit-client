@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { AvatarSelector } from '../../components/AvatarSelector';
 import { Button } from '../../components/Button';
 import { Layout } from '../../components/Layout';
@@ -15,7 +15,7 @@ export const Home: React.FC = () => {
   const handleEnterRoom = () => router.push('/enter-room');
   const handleStart = () => {
     start({ username, avatar })
-    .then(() => router.push('/lobby'));
+    .then(() => router.push(`/lobby`));
   }
   
   return (
@@ -29,13 +29,13 @@ export const Home: React.FC = () => {
       <TextInput
         label='Enter a username'
         onChange={(value) => setUsername(value)}
+        value={username}
       />
       <ButtonsContainer>
         <Button 
           text='Enter a room' 
           onClick={handleEnterRoom} 
           isOutlined
-          isDisable = {!username.length}
         />
         <Button 
           text='Start new game' 
