@@ -4,6 +4,7 @@ module.exports = {
   },
   env: {
     WS_URL: process.env.WS_URL,
-    API_URL: process.env.API_URL
+    API_URL: process.env.API_URL,
+    DOMAIN: process.env.DOMAIN
   }
 }
