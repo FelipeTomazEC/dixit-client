@@ -1,15 +1,17 @@
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../../components/Button';
 import { Layout } from '../../components/Layout';
 import { PlayerLobbyCard } from '../../components/PlayerLobbyCard';
+import { SharePopup } from '../../components/SharePopup';
 import { useMatch } from '../../providers/match-context';
 import { ButtonsContainer, PlayerList, WaitingMessage } from './styles';
 
 export const Lobby: React.FC = () => {
   const router = useRouter();
-  const { players } = useMatch();
-  const handleShareInviteLink = () => alert(`Generating link for this room...`);
+  const { players, matchCode } = useMatch();
+  const [isSharePopupVisible, setIsSharePopupVisible] = useState<boolean>(false);
+  const handleShareInviteLink = () => setIsSharePopupVisible(true);
   const handleStartGame = () => {
     alert('Starting the match...');
     router.push('/choose-picture');
@@ -33,6 +35,10 @@ export const Lobby: React.FC = () => {
         />
         <Button text='Start' onClick={handleStartGame}/>
       </ButtonsContainer>
+      <SharePopup
+        link={`${process.env.DOMAIN}/enter_room?match_code=${matchCode}`}
+        isVisible={isSharePopupVisible} 
+        clickOnClose={() => setIsSharePopupVisible(false)}/>
     </Layout>
   );
 }
