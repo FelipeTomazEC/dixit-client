@@ -14,7 +14,7 @@ interface Props {
 
 export const SharePopup: React.FC<Props> = ({ isVisible, clickOnClose, link }) => {
   const text = `Let's play Dixit with me. ${link}`;
-  const handleCopyToClipboard = (text: string, result: boolean) => {
+  const handleCopyToClipboard = (_: string, result: boolean) => {
     if(result) {
       alert('Link copied successfully.')
     }

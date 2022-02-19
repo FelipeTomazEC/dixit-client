@@ -36,7 +36,7 @@ export const Lobby: React.FC = () => {
         <Button text='Start' onClick={handleStartGame}/>
       </ButtonsContainer>
       <SharePopup
-        link={`${process.env.DOMAIN}/enter_room?match_code=${matchCode}`}
+        link={`${process.env.DOMAIN}/enter-room?match_code=${matchCode}`}
         isVisible={isSharePopupVisible} 
         clickOnClose={() => setIsSharePopupVisible(false)}/>
     </Layout>
