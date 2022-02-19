@@ -53,7 +53,7 @@ export const MatchProvider: React.FC = ({ children }) => {
     <MatchContext.Provider value={{ 
       matchCode, 
       start, 
-      players: [player, ...opponents], 
+      players: player ? [player, ...opponents] : [],
       join
     }}>
       { children }
