@@ -4,6 +4,7 @@ import { IoIosCloseCircle } from 'react-icons/io'
 import { BiLink } from 'react-icons/bi'
 import { BsMessenger, BsTelegram, BsWhatsapp } from 'react-icons/bs'
 import { Button, ButtonSize } from '../Button';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 interface Props {
   isVisible: boolean;
@@ -12,7 +13,12 @@ interface Props {
 }
 
 export const SharePopup: React.FC<Props> = ({ isVisible, clickOnClose, link }) => {
-  const handleCopyToClipboard = () => alert('Copying to clipboard.');
+  const text = `Let's play Dixit with me. ${link}`;
+  const handleCopyToClipboard = (text: string, result: boolean) => {
+    if(result) {
+      alert('Link copied successfully.')
+    }
+  }
 
   return isVisible ? (
     <Background> 
@@ -26,13 +32,13 @@ export const SharePopup: React.FC<Props> = ({ isVisible, clickOnClose, link }) =
         <Main>
           <Label>Share this invite via</Label>
           <SocialMediaButtonsContainer>
-            <Whatsapp href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">
+            <Whatsapp href={`whatsapp://send?text=${text}`} data-action="share/whatsapp/share">
               <BsWhatsapp size={30}/>
             </Whatsapp>
-            <Messenger>
+            <Messenger href={`fb-messenger://share/?link=${text}`}>
               <BsMessenger size={30}/>
             </Messenger>
-            <Telegram>
+            <Telegram href={`tg://msg_url?text=${text}`}>
               <BsTelegram size={30}/>
             </Telegram>
           </SocialMediaButtonsContainer>
@@ -40,11 +46,13 @@ export const SharePopup: React.FC<Props> = ({ isVisible, clickOnClose, link }) =
           <CopyLinkContainer>
             <BiLink size={35}/>
             <Link>{link}</Link>
+            <CopyToClipboard text={link} onCopy={handleCopyToClipboard}>
             <Button
               size={ButtonSize.SMALL} 
               text="Copy"
-              onClick={handleCopyToClipboard}
+              onClick={() => {}}
             />
+            </CopyToClipboard>
           </CopyLinkContainer>
         </Main>
       </Container>
